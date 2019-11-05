@@ -1,0 +1,16 @@
+env = Env() - 환경생성, 가장 기본적인 베이스()
+Processor = 환경 커스텀(reward, state, action 커스텀 가능)
+agent = Agent(env_processor) - 학습 알고리즘 설정 및 작성
+agent.run(env)
+
+--> Processor 와 Agent 는 같이 커스텀 해줘야함
+Processor - Agent 셋트, env 는 끼워주기만 함.
+
+-- 커스텀 할 것 --
+* state 
+0-7 : 자신의 위치, 목표로부터 위치, 자신의 속도, 각도, 가속여부
+이후*3 : 드랍쉽에 대한 위치, 자신의 위치, 속도, 각도, 가속여부
+
+* reward shaping
+1. timestep 마다 * .98
+2. 
